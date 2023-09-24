@@ -14,3 +14,23 @@ function toggleDetail(e) {
     
     $(detail).slideToggle()
 }
+
+function onFormSubmit(e) {
+    e.preventDefault()
+    const email = $("#imp_email")
+    const subject = $("#imp_subject")
+    const message = $("#imp_message")
+
+    if(!$(email).val()) {
+        alert("Email is required")
+    } else if (!$(subject).val()) {
+        alert("subject is required")
+    } else if (!$(message).val()) {
+        alert("message is required")
+    } else {
+        alert("Form Submitted")
+        $(email).val("")
+        $(subject).val("")
+        $(message).val("")
+    }
+}
